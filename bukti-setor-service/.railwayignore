@@ -1,5 +1,20 @@
-# Railway ignore file
-# Files dan folder yang tidak diperlukan untuk deployment
+# Block nixpacks completely - Force Dockerfile
+nixpacks.toml
+package.json
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+bun.lockb
+go.mod
+go.sum
+Cargo.toml
+composer.json
+requirements-*.txt
+!requirements.txt
+pyproject.toml
+poetry.lock
+setup.py
+setup.cfg
 
 # Alternative configuration files
 requirements-*.txt

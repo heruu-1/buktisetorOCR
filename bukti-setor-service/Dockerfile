@@ -1,13 +1,15 @@
-# Simple Dockerfile for Railway
-
+# Railway Dockerfile - Force Python 3.11
 FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies (including distutils for pip build)
+# Install system dependencies for Python 3.11
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-distutils \
+    python3-venv \
+    python3-pip \
+    build-essential \
     poppler-utils \
     libgl1-mesa-glx \
     libglib2.0-0 \
@@ -36,5 +38,5 @@ EXPOSE 5002
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5002/health || exit 1
 
-# Start command
-CMD ["gunicorn", "--bind", "0.0.0.0:5002", "--workers", "1", "--timeout", "180", "app_bukti_setor:app"]
+# Start command - test app first
+CMD ["gunicorn", "--bind", "0.0.0.0:5002", "--workers", "1", "--timeout", "180", "app_test:app"]

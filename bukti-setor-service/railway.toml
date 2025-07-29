@@ -1,9 +1,10 @@
 # =========================================================================
-# RAILWAY CONFIGURATION FOR BUKTI SETOR SERVICE - FORCED DOCKERFILE
+# RAILWAY CONFIGURATION FOR BUKTI SETOR SERVICE - FORCE DOCKERFILE
 # =========================================================================
 
 [build]
-builder = "dockerfile"
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 healthcheckPath = "/health"
@@ -18,5 +19,3 @@ PORT = "5002"
 POPPLER_PATH = "/usr/bin"
 SERVICE_NAME = "bukti-setor-ocr"
 EASYOCR_MODULE_PATH = "/home/appuser/.EasyOCR"
-NIXPACKS_NO_DEFAULT_BUILD = "true"
-RAILWAY_DOCKERFILE_PATH = "Dockerfile"
