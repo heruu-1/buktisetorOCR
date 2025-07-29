@@ -1,0 +1,43 @@
+# ========================================
+# MINIMAL STABLE REQUIREMENTS FOR RAILWAY
+# ========================================
+
+# Core Flask dependencies
+Flask==2.3.3
+Flask-Cors==4.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.5
+SQLAlchemy==2.0.29
+gunicorn==21.2.0
+
+# Environment and utilities
+python-dotenv==1.0.0
+Flask-RESTful==0.3.10
+
+# Basic image processing (without heavy ML dependencies)
+Pillow==10.0.1
+pdf2image==1.16.3
+
+# Excel and Data Processing
+openpyxl==3.1.2
+pandas==2.0.3
+
+# Database
+psycopg2-binary==2.9.7
+
+# Text Processing
+textdistance==4.6.0
+thefuzz==0.22.1
+
+# Logging
+structlog==23.1.0
+
+# OCR dependencies - install after basic setup
+opencv-python-headless==4.8.1.78
+numpy==1.24.3
+
+# EasyOCR and PyTorch - minimal versions
+torch==2.0.1+cpu --find-links https://download.pytorch.org/whl/torch_stable.html
+torchvision==0.15.2+cpu --find-links https://download.pytorch.org/whl/torch_stable.html
+torchaudio==2.0.2+cpu --find-links https://download.pytorch.org/whl/torch_stable.html
+easyocr==1.6.2

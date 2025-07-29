@@ -1,0 +1,44 @@
+# Railway ignore file
+# Files dan folder yang tidak diperlukan untuk deployment
+
+# Alternative configuration files
+requirements-*.txt
+!requirements.txt
+Dockerfile.*
+!Dockerfile
+Procfile.*
+!Procfile
+railway-*.toml
+!railway.toml
+
+# Development files
+.env
+*.log
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Scripts
+deploy_*.sh
+validate_*.sh
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Uploads (created at runtime)
+uploads/
