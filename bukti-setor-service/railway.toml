@@ -6,7 +6,7 @@
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile.railway"
 nixpacksConfig = false
-watchPatterns = ["Dockerfile", "requirements.txt"]
+watchPatterns = ["Dockerfile.railway", "deps.txt"]
 
 [deploy]
 healthcheckPath = "/health"
@@ -24,4 +24,4 @@ EASYOCR_MODULE_PATH = "/home/appuser/.EasyOCR"
 NIXPACKS_BUILDER = "false"
 RAILWAY_DOCKER_BUILD = "true"
 DISABLE_NIXPACKS = "true"
-RAILWAY_DOCKERFILE_PATH = "Dockerfile"
+RAILWAY_DOCKERFILE_PATH = "Dockerfile.railway"

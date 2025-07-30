@@ -1,5 +1,5 @@
 # Block nixpacks completely - Force Dockerfile
-nixpacks.toml
+# nixpacks.toml - REMOVED COMPLETELY
 package.json
 yarn.lock
 package-lock.json
