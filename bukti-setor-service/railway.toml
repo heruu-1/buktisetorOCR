@@ -1,11 +1,12 @@
 # =========================================================================
-# RAILWAY CONFIGURATION - FORCE DOCKERFILE ONLY
+# RAILWAY CONFIGURATION - FORCE DOCKERFILE ONLY - NO NIXPACKS!
 # =========================================================================
 
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
+dockerfilePath = "Dockerfile.railway"
 nixpacksConfig = false
+watchPatterns = ["Dockerfile", "requirements.txt"]
 
 [deploy]
 healthcheckPath = "/health"
