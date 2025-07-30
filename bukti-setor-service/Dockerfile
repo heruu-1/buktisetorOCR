@@ -43,5 +43,5 @@ EXPOSE 5002
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5002/health || exit 1
 
-# Start command - test app for Python 3.12
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "180", "app_test:app"]
+# Start command - full bukti setor app
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "180", "app_bukti_setor:app"]
