@@ -8,6 +8,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.12-venv \
     python3.12-dev \
+    python3.12-distutils \
     python3-pip \
     python3-setuptools \
     build-essential \
