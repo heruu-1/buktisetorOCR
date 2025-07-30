@@ -1,3 +1,13 @@
+# BLOCK NIXPACKS COMPLETELY - FORCE DOCKERFILE ONLY
 **
 *
 /*
+*.py
+*.txt
+requirements.txt
+app.py
+main.py
+Pipfile
+package.json
+setup.py
+pyproject.toml

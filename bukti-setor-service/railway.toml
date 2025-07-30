@@ -5,6 +5,7 @@
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
+nixpacksConfig = false
 
 [deploy]
 healthcheckPath = "/health"
@@ -21,3 +22,5 @@ SERVICE_NAME = "bukti-setor-ocr"
 EASYOCR_MODULE_PATH = "/home/appuser/.EasyOCR"
 NIXPACKS_BUILDER = "false"
 RAILWAY_DOCKER_BUILD = "true"
+DISABLE_NIXPACKS = "true"
+RAILWAY_DOCKERFILE_PATH = "Dockerfile"
