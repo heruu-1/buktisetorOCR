@@ -1,5 +1,5 @@
 # =========================================================================
-# RAILWAY CONFIGURATION FOR BUKTI SETOR SERVICE - FORCE DOCKERFILE
+# RAILWAY CONFIGURATION - FORCE DOCKERFILE ONLY
 # =========================================================================
 
 [build]
@@ -8,14 +8,16 @@ dockerfilePath = "Dockerfile"
 
 [deploy]
 healthcheckPath = "/health"
-healthcheckTimeout = 120
+healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 5
+restartPolicyMaxRetries = 3
 
 [env]
 FLASK_ENV = "production"
 FLASK_DEBUG = "false"
-PORT = "5002"
+PORT = "8080"
 POPPLER_PATH = "/usr/bin"
 SERVICE_NAME = "bukti-setor-ocr"
 EASYOCR_MODULE_PATH = "/home/appuser/.EasyOCR"
+NIXPACKS_BUILDER = "false"
+RAILWAY_DOCKER_BUILD = "true"

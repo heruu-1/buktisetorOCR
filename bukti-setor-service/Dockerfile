@@ -1,15 +1,17 @@
-# Railway Dockerfile - Force Python 3.11
-FROM python:3.11-slim
+# Railway Dockerfile - Python 3.12 with distutils fix
+FROM python:3.12-slim
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies for Python 3.11
+# Install system dependencies for Python 3.12 + fix distutils issue
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3-distutils \
-    python3-venv \
+    python3.12-venv \
+    python3.12-dev \
     python3-pip \
+    python3-setuptools \
     build-essential \
+    pkg-config \
     poppler-utils \
     libgl1-mesa-glx \
     libglib2.0-0 \
@@ -17,6 +19,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Fix setuptools/distutils for Python 3.12
+RUN pip install --upgrade pip setuptools wheel
 
 # Copy requirements first for better caching
 COPY requirements.txt .
@@ -38,5 +43,5 @@ EXPOSE 5002
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD curl -f http://localhost:5002/health || exit 1
 
-# Start command - full bukti setor app
-CMD ["gunicorn", "--bind", "0.0.0.0:5002", "--workers", "1", "--timeout", "180", "app_bukti_setor:app"]
+# Start command - test app for Python 3.12
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "1", "--timeout", "180", "app_test:app"]
