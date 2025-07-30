@@ -1,4 +1,42 @@
-# Ultra minimal for Railway testing
+# ========================================
+# REQUIREMENTS FOR BUKTI SETOR SERVICE (PRODUCTION)
+# ========================================
+
+# Core Flask dependencies
 Flask==2.3.3
+Flask-Cors==4.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.0.5
+SQLAlchemy==2.0.29
 gunicorn==21.2.0
+
+# Environment and utilities
 python-dotenv==1.0.0
+Flask-RESTful==0.3.10
+
+# Database
+psycopg2-binary==2.9.7
+
+# OCR and Image Processing
+easyocr==1.6.2
+opencv-python-headless==4.8.1.78
+numpy==1.24.3
+Pillow==10.0.1
+pdf2image==1.16.3
+
+# PyTorch (CPU only - stable versions)
+torch==2.0.1
+torchvision==0.15.2
+torchaudio==2.0.2
+
+# Excel and Data Processing
+openpyxl==3.1.2
+pandas==2.0.3
+
+# Text Processing and Spell Check
+pyspellchecker==0.7.2
+textdistance==4.6.0
+thefuzz==0.22.1
+
+# Logging and monitoring
+structlog==23.1.0
