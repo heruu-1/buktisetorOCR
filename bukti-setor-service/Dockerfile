@@ -25,16 +25,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --upgrade pip setuptools wheel
 
 # Copy requirements first for better caching
-COPY deps.txt ./requirements.txt
+COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY src/ .
-COPY bukti_setor/ ./bukti_setor/
-COPY shared_utils/ ./shared_utils/
+COPY . .
 
 # Create uploads directory
 RUN mkdir -p /app/uploads
