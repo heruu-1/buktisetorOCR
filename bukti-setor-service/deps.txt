@@ -11,31 +11,39 @@ psycopg2-binary==2.9.7
 # CORS Support
 Flask-CORS==4.0.0
 
-# Basic utilities
+# Flask utilities
 Werkzeug==2.3.7
 click==8.1.7
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.3
 
-# Image Processing & OCR
-Pillow==10.0.0
-numpy==1.24.3
-opencv-python-headless==4.8.1.78
+# OCR & Computer Vision (CORE)
 easyocr==1.6.2
 torch==2.0.1
 torchvision==0.15.2
+numpy==1.24.3
+opencv-python-headless==4.8.1.78
+Pillow==10.0.0
 
-# Text Processing
+# Text Processing & NLP
 python-Levenshtein==0.21.1
 fuzzywuzzy==0.18.0
 
 # File Processing
 PyPDF2==3.0.1
 openpyxl==3.1.2
+xlsxwriter==3.1.3
 
 # HTTP & Requests
 requests==2.31.0
+urllib3==2.0.4
 
-# Date & Time
+# Date & Time Processing
 python-dateutil==2.8.2
+
+# Additional OCR Support
+scikit-image==0.21.0
+
+# Development
+pytest==7.4.0

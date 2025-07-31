@@ -18,6 +18,14 @@ def create_app():
     migrate.init_app(app, db)
     CORS(app)
 
+    # Create tables if they don't exist
+    with app.app_context():
+        try:
+            db.create_all()
+            print("✅ Database tables created successfully")
+        except Exception as e:
+            print(f"⚠️ Database setup warning: {e}")
+
     # Import and register blueprints
     from bukti_setor.routes import bukti_setor_bp, laporan_bp
     app.register_blueprint(bukti_setor_bp)
