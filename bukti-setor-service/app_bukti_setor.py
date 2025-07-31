@@ -18,10 +18,10 @@ def create_app():
     migrate.init_app(app, db)
     CORS(app)
 
-    # Import and register blueprints (temporarily disabled for basic deployment)
-    # from bukti_setor.routes import bukti_setor_bp, laporan_bp
-    # app.register_blueprint(bukti_setor_bp)
-    # app.register_blueprint(laporan_bp)
+    # Import and register blueprints
+    from bukti_setor.routes import bukti_setor_bp, laporan_bp
+    app.register_blueprint(bukti_setor_bp)
+    app.register_blueprint(laporan_bp)
 
     # Health check endpoint
     @app.route('/health', methods=['GET'])
@@ -31,7 +31,7 @@ def create_app():
             'status': 'healthy',
             'service': 'bukti-setor-ocr',
             'version': '2.0.0',
-            'ocr_ready': False,  # Will be True after OCR dependencies added
+            'ocr_ready': True,  # OCR dependencies now added
             'database_ready': True
         }), 200
 
@@ -39,13 +39,17 @@ def create_app():
     def home():
         """Root endpoint"""
         return jsonify({
-            'message': 'Bukti Setor OCR Service - Progressive Deployment',
+            'message': 'Bukti Setor OCR Service - Production Version',
             'status': 'running',
-            'phase': 'Stage 1: Basic Flask + Database',
-            'next_phase': 'Stage 2: Add OCR Dependencies',
+            'phase': 'Stage 3: Full OCR Functionality',
+            'ocr_enabled': True,
             'endpoints': {
-                'health': '/health'
-                # OCR endpoints will be added in Stage 2
+                'health': '/health',
+                'upload': '/api/bukti_setor/upload',
+                'process': '/api/bukti_setor/process',
+                'list': '/api/bukti_setor/list',
+                'delete': '/api/bukti_setor/delete/<int:id>',
+                'export': '/laporan/export-excel'
             }
         })
 
